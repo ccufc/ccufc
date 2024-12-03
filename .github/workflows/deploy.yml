@@ -18,6 +18,7 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan 4.228.216.31 >> ~/.ssh/known_hosts
 
       - name: Deploy project to VM
         run: |
